@@ -482,6 +482,8 @@ async def main(args):
                         time.sleep(0.05)
                         continue
                     tracker.process_frame(frame)
+                    if win:
+                        win.set_camera_frame(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
             finally:
                 cap.release()
 
