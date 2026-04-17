@@ -210,7 +210,7 @@ def main():
     try:
         while True:
             scene = cam.grab_and_detect()
-            scene_state.update(scene)
+            scene_state.update(scene, set(cam.camera_positions().keys()))
             if cam.check_event(wait_ms=200):
                 logger.info("User requested exit via 'q' key")
                 break
